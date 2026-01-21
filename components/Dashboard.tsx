@@ -3,6 +3,7 @@ import React from 'react';
 import { Category, Kpi } from '../types';
 import { CATEGORY_COLORS } from '../constants';
 import KpiCard from './KpiCard';
+import KpiCard3D from './mobile-optimization/KpiCard3D';
 import StrategicAdvisor from './StrategicAdvisor';
 
 interface DashboardProps {
@@ -23,7 +24,7 @@ const Dashboard: React.FC<DashboardProps> = ({ category, onSelectKpi }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {category.kpis.map((kpi) => (
-          <KpiCard key={kpi.nombre} kpi={kpi} onSelectKpi={onSelectKpi} color={category.color} />
+          <KpiCard3D key={kpi.nombre} kpi={kpi} onSelectKpi={onSelectKpi} color={category.color} />
         ))}
       </div>
     </div>
